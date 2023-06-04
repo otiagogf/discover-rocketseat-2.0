@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body * {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    transformei o background em chamada short
+    */
+    background: url(./assets/bg-mobile.jpg) no-repeat top 
+    center/cover; 
+}
+
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+/*Em elementos inline como imagem, não é possível aplicar margin
+    mas é possível centralizar os elementos como imagem aplicando 
+    text-align na div pai
+*/
+#profile img {
+    width: 112px;
+    padding: 8px;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+}
