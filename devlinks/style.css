@@ -3,9 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --text-color: white;
+    --bg-url-dark: url(./assets/bg-mobile-dark.jpg) no-repeat top 
+    center/cover; 
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(255, 255, 255, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --bg-switch-theme: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url-dark: url(./assets/bg-mobile-light.jpg) no-repeat top 
+    center/cover;
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1); 
+    --bg-switch-theme: url(./assets/sun.svg);   
+}
+
 body * {
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    color: var(--text-color);
 }
 body {
     /*
@@ -15,8 +38,7 @@ body {
     background-size: cover;
     transformei o background em chamada short
     */
-    background: url(./assets/bg-mobile.jpg) no-repeat top 
-    center/cover; 
+    background: var(--bg-url-dark);
 }
 
 
@@ -26,6 +48,8 @@ body {
     padding: 0 24px;    
 }
 
+
+/* Profile */
 #profile {
     text-align: center;
     padding: 24px;
@@ -42,7 +66,47 @@ body {
 
 #profile p {
     font-weight: 500;
-    line-height: 24px;
+    line-height: 24px;    
+}
+
+/* Switch Button */
+#switch-theme {
+    position: relative;
+    width: 64px;  
+    
+    margin: 4px auto;
+}
+
+#switch-theme button {
+    width: 32px;
+    height: 32px;
+    background: white var(--bg-switch-theme) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    /* Sobreposição do botão de tema em cima da track de transição*/
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Ajustando o switch para deixar o valor padrão no tema light como inicial */
+.light #switch-theme button {
+    right: 0;
+    left: initial;
+}
+
+#switch-theme span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    --webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
 }
 
 /* Links */
@@ -56,14 +120,14 @@ ul {
     padding: 24px 0;
 }
 
-ul li a{
+ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
 
     padding: 16px 24px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 8px;
     -webkit-backdrop-filter: blur(4px); /* Visto no caniuse.com */
 
@@ -76,8 +140,8 @@ ul li a{
 /* pseudo-selector */
 
 ul li a:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid white;
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
 }
 
 /* social links */
@@ -108,7 +172,7 @@ ul li a:hover {
 */
 
 #social-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--highlight-color);
 }
 
 /* Footer */
@@ -118,5 +182,7 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
+
 
 
