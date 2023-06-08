@@ -79,6 +79,7 @@ body {
 }
 
 #switch-theme button {
+    width: 32px;
     height: 32px;
     background: white var(--bg-switch-theme) no-repeat center;
     border: 0;
