@@ -38,7 +38,8 @@ body {
     background-size: cover;
     transformei o background em chamada short
     */
-    background: var(--bg-url-dark);
+    background: var(--bg-url-dark);     
+    height: 100vh;
 }
 
 
@@ -183,6 +184,17 @@ footer {
     font-size: 14px;
 }
 
+/* Media query*/
 
+@media (min-width: 700px) {
+    :root {
+        --bg-url-dark: url(./assets/bg-desk-darmode.jpg) no-repeat top 
+    center/cover;
+    }
 
+    .light {
+        --bg-url-dark: url(./assets/bg-desk-lightmode.jpg) no-repeat top 
+    center/cover;
+    }
 
+}
